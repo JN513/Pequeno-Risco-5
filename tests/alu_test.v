@@ -76,6 +76,40 @@ initial begin
 
     #1
 
+    $display("Teste subtração 2: \n");
+
+    input_A = 32'd2565;
+    input_B = -3560;
+    operation = 4'b0110;
+
+    #1
+
+    $display("resultado %d", res);
+    if(res == 32'd6125) begin
+        $display("Correto");
+    end else begin
+        $display("Incorreto");
+    end
+
+    #1
+
+    $display("Teste subtração 3: \n");
+
+    input_A = 32'd2565;
+    input_B = 32'd3560;
+    operation = 4'b0110;
+
+    #1
+
+    $display("resultado %d", res);
+    if(res == 32'd4294966301) begin
+        $display("Correto");
+    end else begin
+        $display("Incorreto");
+    end
+
+    #1
+
     $display("\nTeste OR: \n");
 
     input_A = 32'd2565;
