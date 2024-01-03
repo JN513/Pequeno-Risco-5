@@ -16,6 +16,8 @@ ALU u1(
 );
 
 initial begin
+    $dumpfile("build/alu.vcd");
+    $dumpvars;
     clk = 0;
     operation = 4'b0000;
 
@@ -166,8 +168,6 @@ initial begin
     end else begin
         $display("Incorreto");
     end
-    
-    $dumpfile("build/alu.vcd");
 
 end
     

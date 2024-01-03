@@ -1,6 +1,8 @@
 module Core #(
     parameter CLOCK_FREQ=25000000,
     parameter BOOT_ADDRESS=32'h00000000,
+    parameter INSTRUCTION_MEMORY_SIZE=1024,
+    parameter DATA_MEMORY_SIZE=4096,
     parameter MEMORY_FILE=""
 ) (
     input wire clk,
@@ -15,12 +17,7 @@ wire [31:0] read_data_1, read_data_2, instruction, immediate,
     instruction_address, data_address, memory_data, reg_write_data,
     ALU_in_Y, PC_immediate_inclement; // data_address is alu output
 
-reg pc_inclement, pc_load;
-
-initial begin
-    pc_inclement = 0;
-    pc_load = 0;
-end
+wire pc_inclement, pc_load;
 
 assign PC_immediate_inclement = instruction_address + immediate;
 assign pc_inclement = (pc_option == 1'b0) ? 1'b1 : 1'b0;
@@ -48,8 +45,7 @@ PC PC(
     .Input(PC_immediate_inclement),
     .Output(instruction_address),
     .inclement(pc_inclement),
-    .load(pc_load),
-    .reset(reset)
+    .load(pc_load)
 );
 
 ALU Alu(
@@ -79,7 +75,8 @@ Control_Unit Control_unit(
 );
 
 Instruction_Memory #(
-    MEMORY_FILE="../software/mem.hex"
+    INSTRUCTION_MEMORY_SIZE,
+    MEMORY_FILE
 ) Instruction_memory(
     .reset(reset),
     .instruction_out(instruction),
@@ -102,9 +99,9 @@ Immediate_Generator Immediate_generator(
 );
 
 Registers registers(
-    .readRegister1(instruction[19-15]),
-    .readRegister2(instruction[24-20]),
-    .writeRegister(instruction[11-7]),
+    .readRegister1(instruction[19:15]),
+    .readRegister2(instruction[24:20]),
+    .writeRegister(instruction[11:7]),
     .regWrite(reg_write),
     .clk(clk),
     .readData1(read_data_1),

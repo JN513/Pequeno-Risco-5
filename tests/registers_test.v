@@ -20,6 +20,9 @@ Registers Registers(
 );
 
 initial begin
+    $dumpfile("build/registers.vcd");
+    $dumpvars;
+    
     clk = 0;
     read_reg_1 = 0;
     read_reg_2 = 32'h1;
@@ -66,7 +69,6 @@ initial begin
     end
 
     $finish;
-    $dumpfile("build/registers.vcd");
 end
 
 endmodule

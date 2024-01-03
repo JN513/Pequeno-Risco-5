@@ -16,6 +16,9 @@ PC PC(
 );
 
 initial begin 
+    $dumpfile("build/pc.vcd");
+    $dumpvars
+    
     clk = 0;
     reset = 0;
     pc_inclement = 0;
@@ -109,7 +112,6 @@ initial begin
     end
 
     $finish;
-    $dumpfile("build/pc.vcd");
 end
 
 endmodule

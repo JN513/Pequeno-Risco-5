@@ -9,6 +9,8 @@ assign immediate = immediate_reg;
 
 always @(*) begin
     case (instruction[6:0])
+        7'b0010011: // addi instruction 
+            immediate_reg = {20'h00000, instruction[31:20]};
         7'b0000011: // lw instruction 
             immediate_reg = {20'h00000, instruction[31:20]};
         7'b0100011: // sw instruction 

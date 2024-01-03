@@ -9,24 +9,24 @@ module Instruction_Memory #(
 );
 
 reg [31:0] memory[(MEMORY_SIZE/4)-1:0];
+wire [31:0] normalized_address;
+
+assign normalized_address = read_address >> 2;
+
 integer i;
 
 initial begin
-    for (i = 0; i < (MEMORY_SIZE/4)-1; i = i +1) begin
-        memory[i] = 32'h00000000;
-    end
-
     if(MEMORY_FILE != "") begin
-        $readmemh(MEMORY_FILE, memory);
+        $readmemb(MEMORY_FILE, memory);
     end
+
+    memory[0] = 32'h3e800093;
+    memory[1] = 32'h7d008113;
+    memory[2] = 32'hc1810193;
+    memory[3] = 32'h83018213;
+    memory[4] = 32'h3e820293;
 end
 
-assign instruction_out = memory[read_address];
-
-always @(posedge reset) begin
-    for (i = 0; i < (MEMORY_SIZE/4)-1; i = i +1) begin
-        memory[i] = 32'h00000000;
-    end
-end
+assign instruction_out = memory[normalized_address];
     
 endmodule

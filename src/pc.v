@@ -7,7 +7,7 @@ module PC(
     input wire reset
 );
 
-reg [32:0] PC_Register;
+reg [31:0] PC_Register;
 
 assign Output = PC_Register;
 
