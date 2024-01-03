@@ -1,4 +1,4 @@
-module tb_alu();
+module alu_tb();
 
 reg [31:0] input_A, input_B;
 wire [31:0] res;

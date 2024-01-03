@@ -1,9 +1,10 @@
 module Registers (
     input wire [4:0] readRegister1,
     input wire [4:0] readRegister2,
-    input wire [4:0] writeRegister1,
+    input wire [4:0] writeRegister,
     input wire regWrite,
     input wire clk,
+    input wire [31:0] writeData,
     output reg [31:0] readData1,
     output reg [31:0] readData2
 );
@@ -76,7 +77,7 @@ initial begin
     register31 = 32'd0;
 end
 
-always @(readRegister1, readRegister2) begin
+always @(*) begin
     case (readRegister1)
         5'b00000: readData1 = register0;
         5'b00001: readData1 = register1;
