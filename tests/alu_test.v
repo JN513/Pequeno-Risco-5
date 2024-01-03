@@ -167,6 +167,7 @@ initial begin
         $display("Incorreto");
     end
     
+    $dumpfile("build/alu.vcd");
 
 end
     

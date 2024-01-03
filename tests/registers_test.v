@@ -24,8 +24,6 @@ initial begin
     read_reg_1 = 0;
     read_reg_2 = 32'h1;
 
-    $dumpfile("build/registers.vcd");
-
     #2
 
     $display("lendo estado inicial de dois registradores");
@@ -68,6 +66,7 @@ initial begin
     end
 
     $finish;
+    $dumpfile("build/registers.vcd");
 end
 
 endmodule
