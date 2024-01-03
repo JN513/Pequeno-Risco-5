@@ -4,7 +4,7 @@ reg [31:0] input_A, input_B;
 wire [31:0] res;
 reg [3:0] operation;
 reg clk;
-wire zr, ng;
+wire zr;
 
 
 ALU u1(
@@ -12,8 +12,7 @@ ALU u1(
     .ALU_in_X(input_A),
     .ALU_in_Y(input_B),
     .ALU_out_S(res),
-    .ZR(zr),
-    .NG(ng)
+    .ZR(zr)
 );
 
 initial begin
