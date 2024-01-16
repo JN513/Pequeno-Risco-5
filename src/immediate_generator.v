@@ -14,9 +14,9 @@ always @(*) begin
         7'b0000011: // lw instruction 
             immediate_reg = {20'h00000, instruction[31:20]};
         7'b0100011: // sw instruction 
-            immediate_reg = {20'h00000, instruction[31:20], instruction[11:7]};
+            immediate_reg = {20'h00000, instruction[31:25], instruction[11:7]};
         7'b1100011: // beq instruction 
-            immediate_reg = {20'h00000, instruction[31], instruction[7], instruction[30:25], instruction[11:8]};
+            immediate_reg = {19'h00000, instruction[31], instruction[7], instruction[30:25], instruction[11:8], 1'b0};
         default: immediate_reg = 32'h00000000;
     endcase
 end

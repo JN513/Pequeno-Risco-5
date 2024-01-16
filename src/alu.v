@@ -9,7 +9,9 @@ module ALU (
 reg [31:0] ALU_Result;
 
 assign ALU_out_S = ALU_Result;
-assign ZR = ^ALU_Result;
+//assign ZR = ^ALU_Result;
+assign ZR = (^ ALU_Result) & (| ALU_Result);
+//assign ZR = 1'b1;
 
 always @(*) begin
     case(operation)
