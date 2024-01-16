@@ -1,6 +1,6 @@
 # Pequeno RISCO 5
 
-Processador RISC-V de ciclo único com implementação RV32I construído em alguns dias de folga.
+Processador [RISC-V](https://riscv.org/) de ciclo único com implementação RV32I construído em alguns dias de folga.
 
 ## Implementação
 
@@ -16,7 +16,7 @@ O diretório tests possui alguns testes construídos utilizando o [Iverilog](htt
 
 ## Dúvidas e sugestões
 
-Em caso de dúvida ou sugestão fique a vontade para utilizar a seção [ISSUES](https://github.com/JN513/Processador-Risc/issues) do github. Caso se sinta à vontade e queira contribuir com algo qualquer Pull request e bem vindo, todos os Pull requests serão revisados e se possível mergeados.
+Em caso de dúvida ou sugestão fique a vontade para utilizar a seção [ISSUES](https://github.com/JN513/Pequeno-Risco-5/issues) do github. Caso se sinta à vontade e queira contribuir com algo qualquer Pull request e bem vindo, todos os [Pull requests](https://github.com/JN513/Pequeno-Risco-5/pulls) serão revisados e se possível mergeados.
 
 ## Licença
 
