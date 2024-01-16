@@ -12,17 +12,17 @@ assign aluop_out = aluop_out_reg;
 always @(*) begin
     case ({aluop_in, func7, func3})
         12'b00_0000000_000:  
-            aluop_out_reg = 4'b0010;
+            aluop_out_reg = 4'b0010; // sum4
         12'b01_0000000_000:  
-            aluop_out_reg = 4'b0110;
+            aluop_out_reg = 4'b0110; // sub
         12'b10_0000000_000:  
-            aluop_out_reg = 4'b0010;
+            aluop_out_reg = 4'b0010; // sum
         12'b10_0100000_000:  
-            aluop_out_reg = 4'b0110;
+            aluop_out_reg = 4'b0110; // sub
         12'b10_0000000_111:  
-            aluop_out_reg = 4'b0000;
+            aluop_out_reg = 4'b0000; // and
         12'b10_0000000_110:  
-            aluop_out_reg = 4'b0001;
+            aluop_out_reg = 4'b0001; // or
         default: 
             aluop_out_reg = 4'b0010;
     endcase
