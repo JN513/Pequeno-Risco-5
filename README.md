@@ -6,6 +6,8 @@ Processador [RISC-V](https://riscv.org/) de ciclo único com implementação RV3
 
 O processador foi implementado utilizando Verilog HDL, e tendo como base a implementação de ciclo único disponível no livro [Computer Organization and Design RISC-V Edition: The Hardware Software Interface (The Morgan Kaufmann Series in Computer Architecture and Design) - 2º Edition](https://www.amazon.com/Computer-Organization-Design-RISC-V-Architecture/dp/0128203315)
 
+![Esquematico do processador](docs/imgs/esquematico.png)
+
 ## Software
 
 O diretório software possui alguns exemplos e testes escritos em Assembly e os seus respectivos arquivos de memória, além disso está disponível um script para transformar Assembly em arquivo de memória.
