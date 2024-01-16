@@ -104,6 +104,7 @@ Registers registers(
     .writeRegister(instruction[11:7]),
     .regWrite(reg_write),
     .clk(clk),
+    .reset(reset),
     .readData1(read_data_1),
     .readData2(read_data_2),
     .writeData(reg_write_data)
