@@ -1,5 +1,13 @@
 lw x12, 0(x0);
+lw x9, 0(x0);
+beq x12, x9, 36;
 lw x13, 0(x12);
 add x14, x12, x13;
 sw x14, 0(x12);
 lw x14, 0(x12);
+sub x11, x13, x12;
+addi x10, x0, 25;
+addi x10, x10, -15;
+and x15, x12, x13;
+or x15, x12, x13;
+addi x10, x0, 100;

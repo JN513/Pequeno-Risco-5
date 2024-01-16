@@ -75,8 +75,8 @@ Control_Unit Control_unit(
 );
 
 Instruction_Memory #(
-    INSTRUCTION_MEMORY_SIZE,
-    MEMORY_FILE
+    .MEMORY_SIZE(INSTRUCTION_MEMORY_SIZE),
+    .MEMORY_FILE(MEMORY_FILE)
 ) Instruction_memory(
     .reset(reset),
     .instruction_out(instruction),

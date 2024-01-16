@@ -15,9 +15,7 @@ integer i;
 
 wire [31:0] normalized_address;
 
-assign normalized_address = address >> 2; // divide por 4
-
-assign read_data = (memory_read == 1'b1) ? ram[normalized_address] : 32'h00000000;
+assign read_data = (memory_read == 1'b1) ? ram[address] : 32'h00000000;
 
 initial begin
     for (i = 0; i < (MEMORY_SIZE/4)-1; i = i + 1) begin
@@ -41,7 +39,7 @@ always @(posedge clk) begin
         ram[i] <= 32'h00000000;
     end
     end else if(memory_write == 1'b1) begin
-        ram[normalized_address] <= write_data;
+        ram[address] <= write_data;
     end
 end
     

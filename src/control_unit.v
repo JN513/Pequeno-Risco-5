@@ -43,7 +43,7 @@ always @(*) begin
 
         7'b0100011: begin // sw instruction 
             alu_src = 1'b1;
-            memory_to_reg = 1'bx;
+            memory_to_reg = 1'b0;
             reg_write = 1'b0;
             memory_read = 1'b0;
             memory_write = 1'b1;
@@ -53,7 +53,7 @@ always @(*) begin
 
         7'b1100011: begin // beq instruction 
             alu_src = 1'b0;
-            memory_to_reg = 1'bx;
+            memory_to_reg = 1'b0;
             reg_write = 1'b0;
             memory_read = 1'b0;
             memory_write = 1'b0;
