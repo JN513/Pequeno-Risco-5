@@ -42,11 +42,17 @@ always @(*) begin
             5'b01_000: // beq   
                 aluop_out_reg = 4'b0110; // sub
             5'b01_100: // blt 
-                aluop_out_reg = 4'b0111; // sub
+                aluop_out_reg = 4'b0111; // precisa arrumar
             5'b01_110: // bltu  
-                aluop_out_reg = 4'b0111; // sub
+                aluop_out_reg = 4'b0111; // precisa arrumar
+            5'b01_101: // bge
+                aluop_out_reg = 4'b0111;
+            5'b01_111: // bgeu
+                aluop_out_reg = 4'b0111;// precisa verificar se necessita de um slt unsigned
+            5'b01_001: // bne
+                aluop_out_reg = 4'b1010;
             default: 
-                aluop_out_reg = 4'b0110; // sub
+                aluop_out_reg = 4'b0110; // 
         endcase
     end else begin
         case ({aluop_in, func7, func3})
