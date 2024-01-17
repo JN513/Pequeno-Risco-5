@@ -8,14 +8,11 @@ all: ./build/out.bit
 	nextpnr-ecp5 --json ./build/out.json --write ./build/out_pnr.json --45k \
 		--lpf pinout.lpf --textcfg ./build/out.config --package CABGA381
 
-./build/out.json: hello-world-colorlight-i9.v pinout.lpf buildFolder
+./build/out.json: main.v pinout.lpf buildFolder
 	yosys -p " \
-		read_verilog hello-world-colorlight-i9.v; \
-		read_verilog src/registers.v; \
-		read_verilog src/alu.v; \
-		read_verilog src/pc.v; \
-		read_verilog src/top.v; \
-		synth_ecp5 -json ./build/out.json \
+		read_verilog main.v; \
+		read_verilog ../../src/*.v; \
+		synth_ecp5 -json ./build/out.json -abc9 \
 	"
 
 buildFolder:
