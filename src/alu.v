@@ -9,9 +9,7 @@ module ALU (
 reg [31:0] ALU_Result;
 
 assign ALU_out_S = ALU_Result;
-//assign ZR = ^ALU_Result;
-assign ZR = (^ ALU_Result) & (| ALU_Result);
-//assign ZR = 1'b1;
+assign ZR = ~( |ALU_Result );
 
 always @(*) begin
     case(operation)
@@ -33,6 +31,10 @@ always @(*) begin
             ALU_Result = ALU_in_X >> ALU_in_Y;
         4'b1010: // XOR (OU exclusivo)
             ALU_Result = ALU_in_X ^ ALU_in_Y;
+        4'b1110: // Igual
+            ALU_Result = ALU_in_X == ALU_in_Y;
+        4'b1011:
+            ALU_Result = (ALU_in_X >= ALU_in_Y) ? 32'h1 : 32'h0;
         default: ALU_Result = ALU_in_X ; // Operação padrão
     endcase
 end

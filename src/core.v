@@ -19,7 +19,7 @@ wire [31:0] read_data_1, read_data_2, instruction, immediate,
 
 wire pc_inclement, pc_load;
 
-assign PC_immediate_inclement = instruction_address + immediate;
+assign PC_immediate_inclement = instruction_address + (immediate >> 1);
 assign pc_inclement = (pc_option == 1'b0) ? 1'b1 : 1'b0;
 assign pc_load = ~pc_inclement;
 

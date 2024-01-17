@@ -5,7 +5,7 @@ reg clk, reset;
 always #1 clk = ~clk;
 
 Core #(
-    .MEMORY_FILE("software/memory/beq.hex")
+    .MEMORY_FILE("software/memory/bne.hex")
 ) Core(
     .clk(clk),
     .reset(reset)

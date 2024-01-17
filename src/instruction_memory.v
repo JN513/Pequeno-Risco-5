@@ -11,8 +11,7 @@ module Instruction_Memory #(
 reg [31:0] memory[(MEMORY_SIZE/4)-1:0];
 wire [31:0] normalized_address;
 
-assign normalized_address = read_address >> 2;
-assign instruction_out = memory[normalized_address];
+assign instruction_out = memory[read_address];
 
 integer i;
 

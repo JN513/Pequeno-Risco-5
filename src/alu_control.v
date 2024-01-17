@@ -42,15 +42,15 @@ always @(*) begin
             5'b01_000: // beq   
                 aluop_out_reg = 4'b0110; // sub
             5'b01_100: // blt 
-                aluop_out_reg = 4'b0111; // precisa arrumar
+                aluop_out_reg = 4'b1011; // precisa arrumar
             5'b01_110: // bltu  
-                aluop_out_reg = 4'b0111; // precisa arrumar
+                aluop_out_reg = 4'b1011; // precisa arrumar
             5'b01_101: // bge
                 aluop_out_reg = 4'b0111;
             5'b01_111: // bgeu
                 aluop_out_reg = 4'b0111;// precisa verificar se necessita de um slt unsigned
             5'b01_001: // bne
-                aluop_out_reg = 4'b1010;
+                aluop_out_reg = 4'b1110;
             default: 
                 aluop_out_reg = 4'b0110; // 
         endcase
@@ -72,7 +72,7 @@ always @(*) begin
                 aluop_out_reg = 4'b1000; // sll
             12'b10_0000000_010:
                 aluop_out_reg = 4'b0111; // slt
-            12'b10_0000000_010:
+            12'b10_0000000_011:
                 aluop_out_reg = 4'b0111; // sltu
             12'b10_0000000_101:
                 aluop_out_reg = 4'b1001; // srl
