@@ -57,6 +57,9 @@ Em caso de dúvida ou sugestão fique a vontade para utilizar a seção [ISSUES]
 - beq
 - blt
 - bltu
+- bge
+- bgeu
+- bne
 
 ## Licença
 
