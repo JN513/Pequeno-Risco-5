@@ -27,6 +27,12 @@ always @(*) begin
             ALU_Result = (ALU_in_X < ALU_in_Y) ? 32'h1 : 32'h0;
         4'b1100: // NOR
             ALU_Result = ~(ALU_in_X | ALU_in_Y);
+        4'b1000: // Shift Left (deslocamento à esquerda)
+            ALU_Result = ALU_in_X << ALU_in_Y;
+        4'b1001: // Shift Right (deslocamento à direita)
+            ALU_Result = ALU_in_X >> ALU_in_Y;
+        4'b1010: // XOR (OU exclusivo)
+            ALU_Result = ALU_in_X ^ ALU_in_Y;
         default: ALU_Result = ALU_in_X ; // Operação padrão
     endcase
 end
