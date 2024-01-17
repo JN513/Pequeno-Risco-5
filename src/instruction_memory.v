@@ -18,7 +18,7 @@ integer i;
 
 initial begin
     if(MEMORY_FILE != "") begin
-        $readmemh(MEMORY_FILE, memory, 0, 13);
+        $readmemh(MEMORY_FILE, memory, 0, 14);
     end
 end
     
