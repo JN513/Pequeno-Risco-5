@@ -60,6 +60,7 @@ ALU_Control Alu_Control(
     .aluop_in(aluop),
     .func7(instruction[31:25]),
     .func3(instruction[14:12]),
+    .instruction_opcode(instruction[6:0]),
     .aluop_out(alu_operation)
 );
 

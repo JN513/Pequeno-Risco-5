@@ -20,6 +20,44 @@ O diretório tests possui alguns testes construídos utilizando o [Iverilog](htt
 
 Em caso de dúvida ou sugestão fique a vontade para utilizar a seção [ISSUES](https://github.com/JN513/Pequeno-Risco-5/issues) do github. Caso se sinta à vontade e queira contribuir com algo qualquer Pull request e bem vindo, todos os [Pull requests](https://github.com/JN513/Pequeno-Risco-5/pulls) serão revisados e se possível mergeados.
 
+## Instruções suportadas
+
+### R
+
+- add
+- sub
+- sll
+- slt
+- sltu
+- xor
+- slr
+- sra
+- or
+- and
+
+### I
+
+- lw
+- addi
+- slli
+- slti
+- sltiu
+- xori
+- slri
+- srai
+- ori
+- andi
+
+### S
+
+- sw
+
+### SB
+
+- beq
+- blt
+- bltu
+
 ## Licença
 
 A licença utilizada no projeto é a [MIT](https://opensource.org/license/mit/) que concede total liberdade para utilização do mesmo.
