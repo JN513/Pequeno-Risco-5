@@ -6,7 +6,8 @@ module Core #(
     parameter MEMORY_FILE=""
 ) (
     input wire clk,
-    input wire reset
+    input wire reset,
+    output wire [7:0]leds
 );
 
 wire alu_zero, memory_to_reg, memory_read, memory_write, pc_option,
@@ -108,7 +109,8 @@ Registers registers(
     .reset(reset),
     .readData1(read_data_1),
     .readData2(read_data_2),
-    .writeData(reg_write_data)
+    .writeData(reg_write_data),
+    .leds(leds)
 );
     
 endmodule
