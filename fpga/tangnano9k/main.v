@@ -7,7 +7,7 @@ module top (
 );
 
 wire [7:0]leds;
-assign led = [5:0]leds;
+assign led = leds[5:0];
 
 Core #(
     .MEMORY_FILE("../software/memory/fpga_test.hex")

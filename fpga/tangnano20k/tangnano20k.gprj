@@ -7,5 +7,15 @@
     <FileList>
         <File path="main.v" type="file.verilog" enable="1"/>
         <File path="pinout.cst" type="file.cst" enable="1"/>
+        <File path="../../src/alu_control.v" type="file.verilog" enable="1"/>
+        <File path="../../src/alu.v" type="file.verilog" enable="1"/>
+        <File path="../../src/control_unit.v" type="file.verilog" enable="1"/>
+        <File path="../../src/core.v" type="file.verilog" enable="1"/>
+        <File path="../../src/data_memory.v" type="file.verilog" enable="1"/>
+        <File path="../../src/immediate_generator.v" type="file.verilog" enable="1"/>
+        <File path="../../src/instruction_memory.v" type="file.verilog" enable="1"/>
+        <File path="../../src/mux.v" type="file.verilog" enable="1"/>
+        <File path="../../src/pc.v" type="file.verilog" enable="1"/>
+        <File path="../../src/registers.v" type="file.verilog" enable="1"/>
     </FileList>
 </Project>
