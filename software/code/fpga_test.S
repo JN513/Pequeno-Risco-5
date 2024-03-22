@@ -4,7 +4,7 @@ _start:
     addi x2, x0, 2047;
     slli x2, x2, 15;
 
-    addi x15, x0, 9;
+    addi x15, x0, 30;
 
 #    beq x1, x1, loop;
 #
